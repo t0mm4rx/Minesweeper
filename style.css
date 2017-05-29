@@ -12,16 +12,19 @@ body {
 table {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
 }
 
 td {
-    padding: 15px;
+    padding: 20px;
     background-color: #2980B9;
     font-size: 20px;
     margin: 0px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+tr {
+	border-bottom: 2px solid #73b0d6;
 }
 
 button {
@@ -61,12 +64,6 @@ button:disabled {
   margin: 5px;
 }
 
-.king {
-  font-family: 'icons';
-  background-color: #f4dc00;
-  color: #555;
-}
-
 a {
   color: #2980B9;
   text-decoration: none;
@@ -85,4 +82,27 @@ a {
 
 #mines {
 	margin-left: 10%;
+}
+
+/**** SCORES ****/
+#scores {
+	margin-top: 30px;
+	border-spacing:0;
+  border-collapse: collapse;
+}
+
+
+.king {
+  font-family: 'icons';
+  background-color: #f4dc00;
+  color: #555;
+}
+
+.header-td {
+	background-color: #216996;
+	border-bottom: 3px solid #175377;
+}
+
+.no-border {
+	border: 0;
 }
