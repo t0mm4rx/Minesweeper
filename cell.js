@@ -51,7 +51,7 @@ function Cell(x, y) {
         }
     }
 
-    this.reveal = function() {
+    this.reveal = function(b) {
         if (!this.isRevealed && !this.isSelected) {
             iManager.interpolate(0, 1, 100, InterpolationTypes.easeInQuart, function(value) {
                 _this.v = value;
@@ -60,7 +60,9 @@ function Cell(x, y) {
             });
             this.isRevealed = true;
             if (this.closeMines == 0 && !this.isMine) {
+              if (!b) {
                 this.revealOther();
+              }
             }
             if (this.isMine)  {
                 gameOver();

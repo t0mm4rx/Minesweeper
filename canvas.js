@@ -103,7 +103,7 @@ function gameOver() {
     running = false;
     for (var x = 0; x < cols; x++) {
         for (var y = 0; y < rows; y++) {
-            cells[x][y].reveal();
+            cells[x][y].reveal(true);
         }
     }
     document.getElementById("result").innerHTML = "Game over !";
