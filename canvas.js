@@ -13,7 +13,7 @@ function setup() {
     if (getParam("mines")) {
         mineCount = getParam("mines");
     }
-    var cnv = createCanvas(window.innerWidth * 50 / 100, window.innerWidth * 50 / 100);
+    var cnv = createCanvas(window.innerHeight * 50 / 100, window.innerHeight * 50 / 100);
     cellWidth = width / cols;
     initArray();
     iManager = new InterpolationManager();
@@ -24,6 +24,15 @@ function setup() {
     cnv.canvas.style.position = "absolute";
     cnv.canvas.style.left = (window.innerWidth - width) / 2 + "px";
     cnv.canvas.style.top = (window.innerHeight - height) / 2 + "px";
+
+    var elm = document.getElementById('mine-elements');
+    elm.style.position = "absolute";
+    elm.style.left = (window.innerWidth - width) / 2 + "px";
+    elm.style.top = (window.innerHeight - height) / 2 - 30 + "px";
+
+    var elm2 = document.getElementById('time-elements');
+    elm2.style.position = "absolute";
+    elm2.style.top = (window.innerHeight + height) / 2 + 30 + "px";
 }
 
 function draw() {

@@ -19,12 +19,12 @@
     </div>
 
     <div style="text-align: center">
-        <div style="width: 100%; height: 15%">
-            <input type="checkbox" id="selection" style="display: inline-block" onclick="invertSelection()" />
+        <div id="mine-elements">
+            <input type="checkbox" id="selection"/>
             <span style="display: inline-block" onclick="invertSelection()">Mine selection</span>
-            <h3><span id="mines">0</span> / <span id="total">0</span></h3>
+            <span id="mines">0</span> / <span id="total">0</span>
         </div>
-        <div style="width: 100%; margin-top: 65%">
+        <div id="time-elements" style="text-align: center; width: 99%">
             <h2 id="time">00:00</h2>
             <h3><button disabled="true" id="check" onclick="check()"><span class="icon">c</span>Check</button></h3>
             <h1 id="result"></h1>
