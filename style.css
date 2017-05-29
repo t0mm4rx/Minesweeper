@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "icons";
+	src: url('assets/font/font/fontello.ttf');
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #2C3E50;
+    color: white;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+td {
+    padding: 15px;
+    background-color: #2980B9;
+    font-size: 20px;
+    margin: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+button {
+    border: 0;
+    padding: 18px;
+    font-size: 23px;
+    color: white;
+    background-color: #E74C3C;
+    border-bottom: 5px solid #ce4235;
+    border-radius: 3px;
+    transition: .3s all;
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+.small {
+  font-size: 15px;
+  background-color: #2980B9;
+  border-bottom: 5px solid #246c99;
+}
+
+button:disabled {
+  background-color: #94a2aa;
+  border-bottom: 5px solid #747f84;
+  transition: .3s all;
+}
+
+#selection {
+  padding: 10px;
+}
+
+.icon {
+  font-family: 'icons';
+  margin: 5px;
+}
+
+.king {
+  font-family: 'icons';
+  background-color: #f4dc00;
+  color: #555;
+}
+
+a {
+  color: #2980B9;
+  text-decoration: none;
+}
+
+
+/**** INDEX ****/
+#defaultCanvas0 {
+    position: absolute;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+}

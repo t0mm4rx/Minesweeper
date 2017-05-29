@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Minesweeper - scores</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Scores</h1>
+    <table id="scores">
+        <tr>
+            <td class="header">#</td>
+            <td class="header">Score</td>
+            <td class="header">Name</td>
+            <td class="header">Date</td>
+        </tr>
+    </table>
+    <p><a id="see" href="javascript:seeAll()">See all</a></p>
+    <div class="full-width">
+        <button onclick="window.location='index.html'">
+          <span class="icon">b</span>
+          Play
+        </button>
+    </div>
+</body>
+
+<script src="p5.min.js"></script>
+<script src="score.js"></script>
+<script>
+    var table = document.getElementById("scores");
+
+    function setup() {
+        getScores(function(res) {
+            res.scores.sort(function(a, b) {
+                if (a.time > b.time) {
+                    return 1;
+                } else if (a.time < b.time) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            //res.scores.reverse();
+            var m = res.scores.length;
+            if (m > 10) {
+                m = 10;
+            } else {
+                document.getElementById('see').style.display = "none";
+            }
+            for (var i = 0; i < m; i++) {
+                var row = table.insertRow(i + 1);
+                var rank = row.insertCell(0);
+                var time = row.insertCell(1);
+                var name = row.insertCell(2);
+                var date = row.insertCell(3);
+                name.innerHTML = res.scores[i].name;
+                time.innerHTML = formatTime(res.scores[i].time);
+                date.innerHTML = res.scores[i].date;
+                if (i == 0) {
+                    rank.className = "king";
+                    rank.innerHTML = "a";
+                } else {
+                    rank.innerHTML = i + 1;
+                }
+            }
+        });
+
+    }
+
+    function seeAll() {
+        getScores(function(res) {
+            res.scores.sort(function(a, b) {
+                if (a.time > b.time) {
+                    return 1;
+                } else if (a.time < b.time) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            //res.scores.reverse();
+            document.getElementById('see').style.display = "none";
+            for (var i = 10; i < res.scores.length; i++) {
+                var row = table.insertRow(i + 1);
+                var rank = row.insertCell(0);
+                var time = row.insertCell(1);
+                var name = row.insertCell(2);
+                var date = row.insertCell(3);
+                name.innerHTML = res.scores[i].name;
+                time.innerHTML = formatTime(res.scores[i].time);
+                date.innerHTML = res.scores[i].date;
+                if (i == 0) {
+                    rank.className = "king";
+                    rank.innerHTML = "a";
+                } else {
+                    rank.innerHTML = i + 1;
+                }
+            }
+        });
+    }
+</script>
+
+</html>

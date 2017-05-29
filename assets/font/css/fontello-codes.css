@@ -1,0 +1,5 @@
+
+.icon-crown:before { content: '\61'; } /* 'a' */
+.icon-gamepad:before { content: '\62'; } /* 'b' */
+.icon-ok:before { content: '\63'; } /* 'c' */
+.icon-list-bullet:before { content: '\64'; } /* 'd' */

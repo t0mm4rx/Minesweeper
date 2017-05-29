@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Minesweeper</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <button class="small" onclick="window.location='scores.html'">
+          <span class="icon">d</span>
+          Scores
+        </button>
+        <!--<button class="small" onclick="window.location='scores.html'">Change difficulty</button>-->
+    </div>
+
+    <div style="text-align: center">
+        <div style="width: 100%; height: 15%">
+            <input type="checkbox" id="selection" style="display: inline-block" onclick="invertSelection()" />
+            <span style="display: inline-block" onclick="invertSelection()">Mine selection</span>
+            <h3><span id="mines">0</span> / <span id="total">0</span></h3>
+        </div>
+        <div style="width: 100%; margin-top: 65%">
+            <h2 id="time">00:00</h2>
+            <h3><button disabled="true" id="check" onclick="check()"><span class="icon">c</span>Check</button></h3>
+            <h1 id="result"></h1>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+<script src="p5.min.js"></script>
+<script src="interpolation.min.js"></script>
+<script src="canvas.js"></script>
+<script src="cell.js"></script>
+<script src="score.js"></script>
+<script>
+    function invertSelection() {
+        document.getElementById("selection").checked = !document.getElementById("selection").checked;
+    }
+</script>
+
+</html>
